@@ -15,7 +15,7 @@ class FunctionalTest extends TestCase
         $this->dontSeeInDatabase('tasks', ['name' => 'Task 1'])
             ->post('/task', ['name' => 'Task 1'])
             ->assertResponseStatus(302)
-            ->seeInDatabase('tasks', ['name' => 'Task 2']);
+            ->seeInDatabase('tasks', ['name' => 'Task 1']);
     }
 
     public function testTaskDeleteApi_WhenDeleteTask_ExpectTaskHasDeleted()
